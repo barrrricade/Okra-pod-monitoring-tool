@@ -40,13 +40,12 @@ openDropdown = (text) => {
 	matches[matches.length -1].click()
 }
 
-
-let sel = prompt('1. to change datetime, 2. open info')
+let lastXDays = '14'
+let sel = prompt(`1. to change datetime (${lastXDays}d ago-now)\n2. open info`)
 
 switch (sel){
-
 case '1':
-	let new_url = changeTime('14');
+	let new_url = changeTime(lastXDays);
 	window.location.href = new_url;
 	console.log('Opening new URL')
 	break;
