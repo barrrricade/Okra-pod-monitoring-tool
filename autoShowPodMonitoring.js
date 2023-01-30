@@ -1,3 +1,5 @@
+// Description: On graphana sets time period, enable Codes and opens dropdown
+// Makes pod monitoring easier
 
 //turn on all info/error codes
 turnOnCodes = () => {
@@ -6,7 +8,6 @@ turnOnCodes = () => {
 	document.getElementById('switch-2').click() //Info Codes
 	document.getElementById('switch-1').click() //FW Codes
 }
-
 
 // Change time period
 changeTime = (days) => {
@@ -17,16 +18,16 @@ changeTime = (days) => {
 	search_params.set('from', `now-${days}d`);
 
 	// change the search property of the main url
-	url.search = search_params.toString();
 	// the new url string
+	url.search = search_params.toString();
 	var new_url = url.toString();
-
 	console.log(new_url);
 
 	return new_url
 }
 
 // Search dropdown by text
+// Must type full dropdown text exactly
 openDropdown = (text) => {
 	console.log(`opening dropdown ${text}`)
 	const matches = [];
@@ -60,6 +61,4 @@ default:
 	break;
 
 }
-
-
 
